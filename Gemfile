@@ -34,13 +34,6 @@ group :test, :development do
 
   gem 'rspec-rails'
   gem 'shoulda', :require => false
-
-  gem 'cucumber'
-  gem 'cucumber-rails'
-
-  gem 'cucumber-websteps'
-
-  gem 'database_cleaner'
 end
 
 group :test do
