@@ -1,2 +1,2 @@
-class PredefinedWinning < Winnings
+class PredefinedWinning < Winning
 end

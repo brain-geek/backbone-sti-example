@@ -1,4 +1,4 @@
-class TimeBasedWinning < Winnings
+class TimeBasedWinning < Winning
   attr_accessible :x, :measure
 
   validates_presence_of :x

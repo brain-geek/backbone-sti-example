@@ -19,22 +19,22 @@ ActiveRecord::Schema.define(:version => 20121202173137) do
   end
 
   create_table "winnings", :force => true do |t|
-    t.date     "date_start"
-    t.date     "date_end"
-    t.boolean  "availibility_weekday_mon"
-    t.boolean  "availibility_weekday_tue"
-    t.boolean  "availibility_weekday_wed"
-    t.boolean  "availibility_weekday_thu"
-    t.boolean  "availibility_weekday_fri"
-    t.boolean  "availibility_weekday_sat"
-    t.boolean  "availibility_weekday_sun"
+    t.datetime "date_start"
+    t.datetime "date_end"
+    t.boolean  "availibility_weekday_mon", :default => false
+    t.boolean  "availibility_weekday_tue", :default => false
+    t.boolean  "availibility_weekday_wed", :default => false
+    t.boolean  "availibility_weekday_thu", :default => false
+    t.boolean  "availibility_weekday_fri", :default => false
+    t.boolean  "availibility_weekday_sat", :default => false
+    t.boolean  "availibility_weekday_sun", :default => false
     t.integer  "availible_hours_start"
     t.integer  "availible_hours_end"
     t.integer  "x"
     t.string   "measure"
     t.string   "type"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
 end
