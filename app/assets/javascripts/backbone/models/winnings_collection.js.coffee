@@ -3,8 +3,8 @@ class BackboneSti.Collections.WinningsCollection extends Backbone.Collection
   url: '/winnings'
 
   model: (attrs, options) ->
-    if WebBuilder.Widgets[cls_name]
-      new BackboneSti.Collections[cls_name] attrs, options
+    if BackboneSti.Models[attrs.type]
+      new BackboneSti.Models[attrs.type] attrs, options
     else
       console.warn 'Widget not found'  
       false

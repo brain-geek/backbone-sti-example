@@ -2,6 +2,8 @@ class Winning < ActiveRecord::Base
   attr_accessible :availibility_weekday_fri, :availibility_weekday_mon, :availibility_weekday_sat, :availibility_weekday_sun, :availibility_weekday_thu, :availibility_weekday_tue, :availibility_weekday_wed, 
                   :availible_hours_end, :availible_hours_start, :date_end, :date_start
 
+  attr_protected :type
+
   validates_presence_of :date_start, :date_end, :availible_hours_start, :availible_hours_end
   validates_numericality_of :availible_hours_start, :availible_hours_end
   validates_inclusion_of :availible_hours_start, :availible_hours_end, :in => 0..24
@@ -21,4 +23,11 @@ class Winning < ActiveRecord::Base
       errors.add(:availibility_weekday_mon, "should be at least one day selected")
     end
   end
+
+  def serializable_hash(options = nil)
+    a = super
+    a["type"] = self.type
+    a
+  end
+
 end
